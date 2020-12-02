@@ -1,10 +1,17 @@
-//rec = {
-//	top: '25px',
-//	left: '96px',
-//	width: '64px',
-//	height: '96px',
-//      children: []
-//}
+rec1 = {
+	top: '25px',
+	left: '96px',
+	width: '64px',
+	height: '96px',
+     children: []
+}
+rec2 = {
+	top: '35px',
+	left: '106px',
+	width: '32px',
+	height: '40px',
+     children: []
+}
 
 function updateStructure(rec1,rec2){
 	//write your code
@@ -34,21 +41,21 @@ function relative(rec1, rec2){
 	let obj2 = getCoordinates(rec2);
 
 	const res = {
-		children: obj2.children
+		children: []
 	}
 
-	if(obj2.top)
-		res.top = `${rec2.x1 - rec1.x1}px`;
-	if(obj2.left)
-		res.left = `${rec2.y1 - rec1.y1}px`;
-	if(obj2.height)
+	if(rec2.top)
+		res.top = `${obj2.x1 - obj1.x1}px`;
+	if(rec2.left)
+		res.left = `${obj2.y1 - obj1.y1}px`;
+	if(rec2.height)
 		res.height = rec2.height;
-	if(obj2.width)
+	if(rec2.width)
 		res.width = rec2.width;
-	if(obj2.bottom)
-		res.bottom = `${rec1.x2 - rec2.x2}px`;
-	if(obj2.right)
-		res.right = `${rec1.y2 - rec2.y2}px`;
+	if(rec2.bottom)
+		res.bottom = `${obj1.x2 - obj2.x2}px`;
+	if(rec2.right)
+		res.right = `${obj1.y2 - obj2.y2}px`;
 	
 	return res;
 }
