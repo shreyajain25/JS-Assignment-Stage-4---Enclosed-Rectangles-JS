@@ -8,6 +8,60 @@
 
 function updateStructure(rec1,rec2){
 	//write your code
+	if(contains(rec1, rec2)){
+		const relativeDim = relative(rec1, rec2);
+		return { ...rec1, children: [relativeDim] };
+	} else if(contains(rec2, rec1)){
+		const relativeDim = relative(rec2, rec1);
+		return { ...rec2, children: [relativeDim] };
+	} else{
+		return { ...rec1 };
+	}
+}
+
+function contains(rec1, rec2){
+	let obj1 = getCoordinates(rect1);
+	let obj2 = getCoordinates(rect2);
+
+	if(obj1.x1 <= obj2.x1 && obj1.y1 <= obj2.y2 && obj1.x2 >= obj2.x2 && obj1.y2 >= obj2.y2){
+		return true;
+	}
+	return false;
+}
+
+function relative(rec1, rec2){
+	// let obj1 = getCoordinates(rect1);
+	let obj2 = getCoordinates(rect2);
+
+	const res = {
+		children: obj2.children
+	}
+
+	if(obj2.top)
+		res.top = `${rec2.x1 - rec1.x1}px`;
+	if(obj2.left)
+		res.left = `${rec2.y1 - rec1.y1}px`;
+	if(obj2.height)
+		res.height = rec2.height;
+	if(obj2.width)
+		res.width = rec2.width;
+	if(obj2.bottom)
+		res.bottom = `${rec1.x2 - rec2.x2}px`;
+	if(obj2.right)
+		res.right = `${rec1.y2 - rec2.y2}px`;
+	
+	return res;
+}
+
+function getCoordinates(rect){
+	let x1, y1, x2, y2;
+	x1 = rect.top ? parseInt(rect.top) : -(parseInt(rect.height) + parseInt(rect.bottom));
+	y1 = rect.left ? parseInt(rect.left) : -(parseInt(rect.width) + parseInt(rect.right));
+
+	x2 = rect.bottom ? parseInt(rect.bottom) : (parseInt(rect.height) + parseInt(rect.top));
+	y2 = rect.right ? parseInt(rect.right) : (parseInt(rect.width) + parseInt(rect.left));
+
+	return {x1 , y1, x2 , y2};
 }
 
 module.exports = updateStructure;
