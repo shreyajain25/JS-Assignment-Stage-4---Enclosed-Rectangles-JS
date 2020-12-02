@@ -1,17 +1,10 @@
-rec1 = {
-	top: '25px',
-	left: '96px',
-	width: '64px',
-	height: '96px',
-     children: []
-}
-rec2 = {
-	top: '35px',
-	left: '106px',
-	width: '32px',
-	height: '40px',
-     children: []
-}
+// rec = {
+// 	top: '25px',
+// 	left: '96px',
+// 	width: '64px',
+// 	height: '96px',
+//      children: []
+// }
 
 function updateStructure(rec1,rec2){
 	//write your code
@@ -41,7 +34,7 @@ function relative(rec1, rec2){
 	let obj2 = getCoordinates(rec2);
 
 	const res = {
-		children: []
+		children: rec2.children
 	}
 
 	if(rec2.top)
