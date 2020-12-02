@@ -61,7 +61,10 @@ function getCoordinates(rect){
 	x2 = rect.bottom ? parseInt(rect.bottom) : (parseInt(rect.height) + parseInt(rect.top));
 	y2 = rect.right ? parseInt(rect.right) : (parseInt(rect.width) + parseInt(rect.left));
 
-	return {x1 , y1, x2 , y2};
+	return {x1: x1,
+		   y1: y1,
+		   x2: x2 ,
+		   y2: y2};
 }
 
 module.exports = updateStructure;
