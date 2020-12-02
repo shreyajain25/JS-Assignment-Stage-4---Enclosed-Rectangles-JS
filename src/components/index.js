@@ -34,7 +34,7 @@ function relative(rec1, rec2){
 	let obj2 = getCoordinates(rec2);
 
 	const res = {
-		children: rec2.children
+		children: []
 	}
 
 	if(rec2.top)
