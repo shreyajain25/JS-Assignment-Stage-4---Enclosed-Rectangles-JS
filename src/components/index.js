@@ -20,8 +20,8 @@ function updateStructure(rec1,rec2){
 }
 
 function contains(rec1, rec2){
-	let obj1 = getCoordinates(rect1);
-	let obj2 = getCoordinates(rect2);
+	let obj1 = getCoordinates(rec1);
+	let obj2 = getCoordinates(rec2);
 
 	if(obj1.x1 <= obj2.x1 && obj1.y1 <= obj2.y2 && obj1.x2 >= obj2.x2 && obj1.y2 >= obj2.y2){
 		return true;
@@ -30,8 +30,8 @@ function contains(rec1, rec2){
 }
 
 function relative(rec1, rec2){
-	// let obj1 = getCoordinates(rect1);
-	let obj2 = getCoordinates(rect2);
+	let obj1 = getCoordinates(rec1);
+	let obj2 = getCoordinates(rec2);
 
 	const res = {
 		children: obj2.children
