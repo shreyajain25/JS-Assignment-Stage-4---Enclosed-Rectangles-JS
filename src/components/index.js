@@ -58,8 +58,8 @@ function getCoordinates(rect){
 	x1 = rect.top ? parseInt(rect.top) : -(parseInt(rect.height) + parseInt(rect.bottom));
 	y1 = rect.left ? parseInt(rect.left) : -(parseInt(rect.width) + parseInt(rect.right));
 
-	x2 = rect.bottom ? parseInt(rect.bottom) : (parseInt(rect.height) + parseInt(rect.top));
-	y2 = rect.right ? parseInt(rect.right) : (parseInt(rect.width) + parseInt(rect.left));
+	x2 = rect.bottom ? -(parseInt(rect.bottom)) : (parseInt(rect.height) + parseInt(rect.top));
+	y2 = rect.right ? -(parseInt(rect.right)) : (parseInt(rect.width) + parseInt(rect.left));
 
 	return {x1: x1,
 		   y1: y1,
