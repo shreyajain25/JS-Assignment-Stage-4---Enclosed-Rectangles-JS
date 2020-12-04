@@ -23,7 +23,7 @@ function contains(rec1, rec2){
 	let obj1 = getCoordinates(rec1);
 	let obj2 = getCoordinates(rec2);
 
-	if(obj1.x1 <= obj2.x1 && obj1.y1 <= obj2.y2 && obj1.x2 >= obj2.x2 && obj1.y2 >= obj2.y2){
+	if(obj1.x1 <= obj2.x1 && obj1.y1 <= obj2.y1 && obj1.x2 >= obj2.x2 && obj1.y2 >= obj2.y2){
 		return true;
 	}
 	return false;
